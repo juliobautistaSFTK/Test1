@@ -13,7 +13,7 @@ public class DatabaseConnection {
 		Connection conn =null;
 		try {
 			//Class.forName("org.mariadb.jdbc.Driver");
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			Class.forName("org.mariadb.jdbc.Driver");
             conn = DriverManager.getConnection(URL, USER, PASSWORD);
 		} catch (ClassNotFoundException e) {
 			throw new SQLException("Error cargando el driver JDBC de MariaDB", e);
