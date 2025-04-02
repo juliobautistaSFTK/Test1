@@ -1,0 +1,18 @@
+# Usamos la imagen oficial de Tomcat
+FROM tomcat:8.5-jre8
+
+# Establecemos el directorio de trabajo
+WORKDIR /usr/local/tomcat/webapps
+
+# Copiamos el archivo WAR al contenedor
+COPY ./target/TaskManager.war /usr/local/tomcat/webapps/
+
+# Exponemos el puerto 8000
+EXPOSE 8080
+
+# Modificamos el puerto en el archivo de configuración de Tomcat
+RUN sed -i 's/8080/8080/' /usr/local/tomcat/conf/server.xml
+
+# Iniciamos Tomcat cuando el contenedor se ejecute
+CMD ["catalina.sh", "run"]
+
