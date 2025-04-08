@@ -5,7 +5,7 @@ FROM tomcat:8.5-jre8
 WORKDIR /usr/local/tomcat/webapps
 
 # Copiamos el archivo WAR al contenedor
-COPY ./target/TaskManager.war /usr/local/tomcat/webapps/
+#COPY ./target/TaskManager.war /usr/local/tomcat/webapps/
 
 # Exponemos el puerto 8000
 EXPOSE 8080
